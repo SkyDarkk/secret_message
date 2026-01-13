@@ -1,0 +1,126 @@
+.envelope-wrapper {
+    position: relative;
+    width: 200px;
+    height: 150px;
+    background-color: #f08080;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.envelope-wrapper:hover {
+    transform: scale(1.05);
+}
+
+.flap {
+    position: absolute;
+    top: 0;
+    width: 0;
+    height: 0;
+    border-left: 100px solid transparent;
+    border-right: 100px solid transparent;
+    border-top: 80px solid #cd5c5c;
+    z-index: 3;
+    transform-origin: top;
+    transition: transform 0.5s ease;
+}
+
+.envelope .body {
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    border-left: 100px solid #f08080;
+    border-right: 100px solid #f08080;
+    border-bottom: 75px solid #f08080;
+    border-top: 75px solid transparent;
+    z-index: 2;
+}
+
+
+.letter {
+    position: absolute;
+    bottom: 0; 
+    left: 10px;
+    width: 180px;
+    height: 130px;
+    background-color: white;
+    z-index: 1; 
+    transition: transform 0.8s ease-in-out;
+    text-align: center;
+    padding-top: 10px;
+}
+
+.letter {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    width: 180px;
+    height: 130px;
+    background-color: white;
+    z-index: 1;
+    transition: transform 0.5s;
+    text-align: center;
+    padding-top: 10px;
+    font-size: 12px;
+}
+
+
+.heart {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 30px;
+    height: 30px;
+    background-color: red;
+    transform: translate(-50%, -50%) rotate(45deg);
+    z-index: 4;
+    transition: opacity 0.3s;
+}
+.heart::before, .heart::after {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: red;
+    border-radius: 50%;
+}
+.heart::before { left: -15px; }
+.heart::after { top: -15px; }
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: bisque;
+}
+#pesan {
+    display: none;
+    text-align: center;
+    font-family: 'Dancing Script', 'Pacifico', 'Cursive', sans-serif;
+    font-size: 40px;
+    color: #e91e63;
+}
+
+
+.floating-love {
+    position: absolute;
+    color: red;
+    font-size: 24px;
+    pointer-events: none; 
+    animation: melayang 1s ease-out forwards; 
+    left: 0;
+    top: 0;
+}
+
+
+@keyframes melayang {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+}
